@@ -51,6 +51,17 @@ if ((millis()-lastSend) > tempo_chaveamento){
         Serial.println(imsg);
         Serial.println(" Codigo 182");
     }
-
+    else if(imsg<205){
+        lastSend = millis();
+        Serial.print(" byte: ");
+        Serial.println(msg, BIN);  //  11000101
+        Serial.print(" int: ");
+        Serial.println(imsg);
+        Serial.println(" Codigo 205");
+    }
+    else{
+        Serial.println(imsg);
+        Serial.println(" Codigo Erro");
+    }
 }
 }
